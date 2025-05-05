@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-color-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev Blog</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      id="light-theme"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css"
+      disabled
+    />
+    <link
+      id="dark-theme"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css"
+      disabled
+    />
+    <link
+      id="dark-mode-styles"
+      rel="stylesheet"
+      href="/assets/css/dark-mode.css"
+      disabled
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Dev Blog</h1>
+      <button id="themeToggle" aria-label="Toggle theme">🌓</button>
+    </header>
+    <main>
+      <h1 id="npm-serve-folder">Npm Serve Folder</h1>
+
+      <p>
+        To serve a folder using an npm package, the most common and lightweight
+        way is to use the
+        <a href="https://www.npmjs.com/package/serve"
+          ><code class="language-plaintext highlighter-rouge">serve</code></a
+        >
+        package.
+      </p>
+
+      <h3 id="steps">Steps:</h3>
+
+      <ol>
+        <li>
+          <strong
+            >Install
+            <code class="language-plaintext highlighter-rouge">serve</code>
+            globally (or locally):</strong
+          >
+        </li>
+      </ol>
+
+      <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <pre
+            class="highlight"
+          ><code class="hljs language-undefined">npm install -g serve
+</code></pre>
+        </div>
+      </div>
+
+      <p>Or if you prefer to use it locally in a project:</p>
+
+      <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <pre
+            class="highlight"
+          ><code class="hljs language-css">npm install <span class="hljs-attr">--save-dev</span> serve
+</code></pre>
+        </div>
+      </div>
+
+      <ol>
+        <li><strong>Run the command to serve a folder:</strong></li>
+      </ol>
+
+      <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <pre
+            class="highlight"
+          ><code class="hljs language-bash">serve path/to/your-folder
+</code></pre>
+        </div>
+      </div>
+
+      <p>Example:</p>
+
+      <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <pre
+            class="highlight"
+          ><code class="hljs language-undefined">serve dist
+</code></pre>
+        </div>
+      </div>
+
+      <p>
+        This will serve the contents of the
+        <code class="language-plaintext highlighter-rouge">dist</code>
+        folder at
+        <code class="language-plaintext highlighter-rouge"
+          >http://localhost:3000</code
+        >
+        by default.
+      </p>
+
+      <hr />
+
+      <h3 id="optional-add-a-script-to-packagejson">
+        Optional: Add a script to
+        <code class="language-plaintext highlighter-rouge">package.json</code>
+      </h3>
+
+      <div class="language-json highlighter-rouge">
+        <div class="highlight">
+          <pre
+            class="highlight"
+          ><code class="hljs language-json"><span class="hljs-attr">"scripts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">"start"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"serve dist"</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+        </div>
+      </div>
+
+      <p>Then run:</p>
+
+      <div class="language-bash highlighter-rouge">
+        <div class="highlight">
+          <pre
+            class="highlight"
+          ><code class="hljs language-sql">npm run <span class="hljs-keyword">start</span>
+</code></pre>
+        </div>
+      </div>
+
+      <p>
+        Would you like it to serve with custom port, headers, or support for SPA
+        routing (e.g., for React or Vue)?
+      </p>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="/assets/js/theme-manager.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        hljs.highlightAll()
+      })
+    </script>
+  </body>
+</html>

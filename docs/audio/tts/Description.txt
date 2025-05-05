@@ -1,0 +1,17 @@
+Clean Markdown
+Converts Markdown file to plain text by removing formatting elements and outputs clean text.
+
+Find File
+Searches for files matching a filter in a specified folder recursively.
+
+Install Local Module
+Uninstalls an existing Python package, removes its egg-info directory, then reinstalls it in development mode.
+
+Move File by Json Config
+Copies files from multiple source directories to corresponding destinations as specified in a JSON config file.
+
+Move Items
+Moves files or directories from source to target location with safety checks and user prompts. Handles both files and directories recursively.
+
+Speak Text
+Converts text to speech using System.Speech.Synthesis, with options for voice selection, output control, and audio parameters.
