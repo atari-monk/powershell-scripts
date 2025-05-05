@@ -1,4 +1,4 @@
-# Text-to-Speech PowerShell Command Documentation
+# PowerShell Speak Text Documentation
 
 ## Function
 Converts text to speech using System.Speech.Synthesis, with options for voice selection, output control, and audio parameters.
@@ -28,27 +28,27 @@ Converts text to speech using System.Speech.Synthesis, with options for voice se
 
 1. **Basic text-to-speech**:
    ```powershell
-   .\script.ps1 -Text "Hello world"
+   .\Speak-Text.ps1 -Text "Hello world"
    ```
 
 2. **Read from file with female adult voice**:
    ```powershell
-   .\script.ps1 -InputFile "input.txt" -Gender Female -Age Adult
+   .\Speak-Text.ps1 -InputFile "input.txt" -Gender Female -Age Adult
    ```
 
 3. **Save to file without playback**:
    ```powershell
-   .\script.ps1 -Text "Warning message" -OutputPath "alert.wav" -NoSpeak
+   .\Speak-Text.ps1 -Text "Warning message" -OutputPath "alert.wav" -NoSpeak
    ```
 
 4. **List available voices**:
    ```powershell
-   .\script.ps1 -ListVoices
+   .\Speak-Text.ps1 -ListVoices
    ```
 
 5. **Custom voice with audio adjustments**:
    ```powershell
-   .\script.ps1 -Text "Emergency alert" -VoiceName "Microsoft David" -Rate 3 -Volume 90 -Pitch -2
+   .\Speak-Text.ps1 -Text "Emergency alert" -VoiceName "Microsoft David" -Rate 3 -Volume 90 -Pitch -2
    ```
 
 ## Error Handling

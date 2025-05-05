@@ -1,5 +1,5 @@
 param(
-    [string]$ConfigFile = "C:\atari-monk\code\utility-scripts-data\file_mappings.json"
+    [string]$ConfigFile = "C:\atari-monk\code\apps-data-store\file_mappings.json"
 )
 
 if (-not (Test-Path -Path $ConfigFile)) {

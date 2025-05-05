@@ -1,0 +1,24 @@
+PowerShell Install Local Module Documentation
+Function
+Uninstalls an existing Python package, removes its egg-info directory, then reinstalls it in development mode. Handles common edge cases with error handling.
+Parameters
+-reponame (Mandatory string): Name of the Python package/repository to reinstall
+-codepath (Optional string): Base directory containing the repository (default: "C:\atari-monk\code")
+Usage Examples
+powershell
+Basic usage
+.\Install-LocalModule.ps1 -reponame "mypackage"
+Custom code path
+.\Install-LocalModule.ps1 -reponame "mylib" -codepath "D:\dev\projects"
+Process Flow
+Stores current working directory
+Constructs full repository path
+Attempts to uninstall existing package via pip
+Removes egg-info directory if exists
+Installs package in development mode (-e .)
+Restores original working directory
+Exits with status code 1 (non-zero indicates completion)
+Error Handling
+Gracefully handles cases where package isn't installed
+Provides warnings/errors for failed operations
+Skips non-existent egg-info directories

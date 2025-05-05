@@ -46,7 +46,8 @@ param(
 begin {
     Add-Type -AssemblyName System.Speech -ErrorAction Stop
     $SpeechSynthesizer = New-Object -TypeName System.Speech.Synthesis.SpeechSynthesizer -ErrorAction Stop
-    
+    $global:StopSpeech = $false
+
     function Get-AvailableVoices {
         try {
             return $SpeechSynthesizer.GetInstalledVoices() | 
@@ -94,7 +95,19 @@ begin {
             }
 
             if (-not $NoSpeak) {
-                $SpeechSynthesizer.Speak($TextToSpeak)
+                $SpeechSynthesizer.SpeakAsync($TextToSpeak) | Out-Null
+                Write-Host "Speech started. Press 'S' to stop..."
+                while ($SpeechSynthesizer.State -eq 'Speaking') {
+                    if ([Console]::KeyAvailable) {
+                        $key = [Console]::ReadKey($true)
+                        if ($key.Key -eq 'S') {
+                            $SpeechSynthesizer.SpeakAsyncCancelAll()
+                            Write-Host "Speech stopped by user."
+                            break
+                        }
+                    }
+                    Start-Sleep -Milliseconds 100
+                }
             }
         }
         catch {

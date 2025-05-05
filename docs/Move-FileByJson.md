@@ -1,0 +1,56 @@
+# PowerShell Move File By Json Documentation
+
+## **Purpose**  
+Copies files from multiple source directories to corresponding destinations as specified in a JSON config file.
+
+## **Parameters**  
+- **`-ConfigFile`** (String, Optional)  
+  - Path to JSON configuration file.  
+  - Default: `"C:\atari-monk\code\apps-data-store\file_mappings.json"`  
+
+## **JSON Config Structure**  
+```json
+[
+    {
+        "source": "C:\\path\\to\\source",
+        "destination": "C:\\path\\to\\destination"
+    },
+    ...
+]
+```
+
+## **Behavior**  
+1. **Checks**  
+   - Validates if `ConfigFile` exists.  
+   - Validates JSON parsing.  
+   - Skips missing sources, creates missing destinations.  
+
+2. **File Operations**  
+   - Recursively copies all files (`*`) from `source` to `destination`.  
+   - Overwrites existing files (`-Force`).  
+
+3. **Output**  
+   - Success: Green confirmation.  
+   - Warnings: Missing sources.  
+   - Errors: Failed copies or JSON parsing.  
+
+## **Usage Example**  
+```powershell
+.\file_transfer.ps1 -ConfigFile "C:\custom\mappings.json"
+```
+
+## **Exit Codes**  
+- `0` = Success  
+- `1` = Config file missing or invalid JSON  
+
+## **Error Handling**  
+- Terminates on config errors.  
+- Continues on per-mapping failures.  
+
+## **Dependencies**  
+- PowerShell 5.1+  
+- Valid JSON config.  
+
+## **Notes**  
+- Uses `-Force` for overwrites and directory creation.  
+- Silent directory creation (`Out-Null`).
