@@ -1,4 +1,4 @@
-# PowerShell Speak Text Documentation
+# Speak Text
 
 ## Function
 Converts text to speech using System.Speech.Synthesis, with options for voice selection, output control, and audio parameters.

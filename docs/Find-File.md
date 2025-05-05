@@ -1,4 +1,4 @@
-# PowerShell Find File Documentation
+# Find File
 
 ## Function
 Searches for files matching a filter in a specified folder (recursively) and:
@@ -13,13 +13,13 @@ Searches for files matching a filter in a specified folder (recursively) and:
 ## Usage Examples
 ```powershell
 # Find single PDF file and copy path to clipboard
-.\script.ps1 -folder "C:\Documents" -filter "report.pdf"
+.\Find-File.ps1 -folder "C:\Documents" -filter "report.pdf"
 
 # Find all text files in project directory
-.\script.ps1 -folder "D:\Projects" -filter ".txt"
+.\Find-File.ps1 -folder "D:\Projects" -filter ".txt"
 
 # Search for invoices (handles multiple matches)
-.\script.ps1 -folder "E:\Accounting" -filter "invoice_2023"
+.\Find-File.ps1 -folder "E:\Accounting" -filter "invoice_2023"
 ```
 
 ## Output Behavior

@@ -1,4 +1,4 @@
-PowerShell Clean Markdown Documentation
+Clean Markdown
 Function
 Converts Markdown file to plain text by removing formatting elements (headers, lists, emphasis, links, etc.) and outputs clean text.
 Parameters

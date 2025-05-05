@@ -1,4 +1,4 @@
-PowerShell Install Local Module Documentation
+Install Local Module
 Function
 Uninstalls an existing Python package, removes its egg-info directory, then reinstalls it in development mode. Handles common edge cases with error handling.
 Parameters

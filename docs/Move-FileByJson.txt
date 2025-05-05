@@ -1,4 +1,4 @@
-PowerShell Move File By Json Documentation
+Move File By Json
 Purpose
 Copies files from multiple source directories to corresponding destinations as specified in a JSON config file.
 Parameters
